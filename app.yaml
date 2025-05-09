@@ -1,11 +1,38 @@
 runtime: nodejs20
-env: standard
-
-instance_class: F2
 
 handlers:
-  - url: /images
-    static_dir: images/
-  - url: /.* 
+  # Serve the homepage
+  - url: /
     static_files: index.html
     upload: index.html
+
+  # Serve booking page
+  - url: /booking.html
+    static_files: booking.html
+    upload: booking.html
+
+  # Serve JS
+  - url: /script.js
+    static_files: script.js
+    upload: script.js
+
+  # Serve CSS
+  - url: /style.css
+    static_files: style.css
+    upload: style.css
+
+  # Serve JPG images
+  - url: /.*\.jpg
+    static_dir: .
+
+  # Serve PNG images
+  - url: /.*\.png
+    static_dir: .
+
+  # Serve JPEG images
+  - url: /.*\.jpeg
+    static_dir: .
+
+  # Serve ICO files
+  - url: /.*\.ico
+    static_dir: .
