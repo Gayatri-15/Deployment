@@ -1,0 +1,17 @@
+runtime: nodejs16
+
+env: standard
+
+handlers:
+  - url: /static
+    static_dir: public
+
+  - url: /images
+    static_dir: public/images
+
+  - url: /
+    script: auto
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 2
